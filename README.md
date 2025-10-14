@@ -1,0 +1,1 @@
+InterviewBit is a  gamified e-learning platform that helps software engineers prepare for technical interviews. It is a product of Scaler Academy and is designed to polish the skills needed for jobs at top tech companies.
