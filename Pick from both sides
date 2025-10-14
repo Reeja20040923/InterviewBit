@@ -1,0 +1,23 @@
+public class Solution {
+    public int solve(int[] A, int B) {
+        int n = A.length;
+        int max_sum = 0;
+        int front_sum = 0;
+        int back_sum = 0;
+        
+        for (int i=0;i<B;i++){
+        
+            front_sum += A[i];
+                
+        }
+        max_sum = front_sum;
+        for (int j=0;j<B;j++){
+            front_sum -= A[B-j-1];
+            back_sum += A[n-1-j]; 
+            max_sum = Math.max(max_sum,front_sum+back_sum);
+        }
+        
+        
+        return max_sum;
+    }
+}
