@@ -1,18 +1,28 @@
 public class Solution {
     public int isPalindrome(String A) {
-        if(A == null || A.isEmpty()){
+        if (A == null) {
             return 0;
         }
-        String newstr = A.toLowerCase();
+
+        // Remove all non-alphanumeric characters
+        StringBuilder filtered = new StringBuilder();
+        for (char c : A.toCharArray()) {
+            if (Character.isLetterOrDigit(c)) {
+                filtered.append(Character.toLowerCase(c));
+            }
+        }
+
+        String newstr = filtered.toString();
         int left = 0;
-        int right = newstr.length()-1;
-        while(left<right){
-            if (newstr.charAt(left) != newstr.charAt(right)){
-                return 1;
+        int right = newstr.length() - 1;
+
+        while (left < right) {
+            if (newstr.charAt(left) != newstr.charAt(right)) {
+                return 0; // Not a palindrome
             }
             left++;
             right--;
         }
-        return 0;
+        return 1; // Palindrome
     }
 }
